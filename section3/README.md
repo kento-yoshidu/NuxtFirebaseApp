@@ -1,4 +1,4 @@
-# NuxtFirebaseApp
+# section3
 
 ## Build Setup
 
