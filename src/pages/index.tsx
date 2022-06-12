@@ -2,7 +2,7 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Nav from "../components/Nav"
-import Modal from "../components/Modal"
+import Modal from "../components/modal"
 import Footer from "../components/Footer"
 
 import * as Styles from "../styles/style.module.scss"
