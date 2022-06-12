@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-import * as Styles from "./styles/style.module.scss"
-import * as ModalStyles from "./styles/modal.module.scss"
+import * as Styles from "../styles/style.module.scss"
+import * as ModalStyles from "../styles/modal.module.scss"
 
 const Modal = () => {
   const [show, setShow] = useState(false)
@@ -30,7 +30,7 @@ const Modal = () => {
           >
             {imgNumber === 1 &&
               <StaticImage
-                src={"./images/image01.jpg"}
+                src={"../images/image01.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -39,7 +39,7 @@ const Modal = () => {
 
             {imgNumber === 2 &&
               <StaticImage
-                src={"./images/image02.jpg"}
+                src={"../images/image02.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -48,7 +48,7 @@ const Modal = () => {
 
             {imgNumber === 3 &&
               <StaticImage
-                src={"./images/image03.jpg"}
+                src={"../images/image03.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -57,7 +57,7 @@ const Modal = () => {
 
             {imgNumber === 4 &&
               <StaticImage
-                src={"./images/image04.jpg"}
+                src={"../images/image04.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -66,7 +66,7 @@ const Modal = () => {
 
             {imgNumber === 5 &&
               <StaticImage
-                src={"./images/image05.jpg"}
+                src={"../images/image05.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -75,7 +75,7 @@ const Modal = () => {
 
             {imgNumber === 6 &&
               <StaticImage
-                src={"./images/image06.jpg"}
+                src={"../images/image06.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -84,7 +84,7 @@ const Modal = () => {
 
             {imgNumber === 7 &&
               <StaticImage
-                src={"./images/image07.jpg"}
+                src={"../images/image07.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -93,7 +93,7 @@ const Modal = () => {
 
             {imgNumber === 8 &&
               <StaticImage
-                src={"./images/image08.jpg"}
+                src={"../images/image08.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -115,7 +115,7 @@ const Modal = () => {
             className={Styles.imgWrapper}
           >
             <StaticImage
-              src="./images/image01.jpg"
+              src="../images/image01.jpg"
               alt="hoge"
               data-img="1"
             />
@@ -126,7 +126,7 @@ const Modal = () => {
             className={Styles.imgWrapper}
           >
             <StaticImage
-              src="./images/image02.jpg"
+              src="../images/image02.jpg"
               alt="hoge"
               data-img="2"
             />
@@ -137,7 +137,7 @@ const Modal = () => {
             className={Styles.imgWrapper}
           >
             <StaticImage
-              src="./images/image03.jpg"
+              src="../images/image03.jpg"
               alt="hoge"
               data-img="3"
             />
@@ -148,7 +148,7 @@ const Modal = () => {
             className={Styles.imgWrapper}
           >
             <StaticImage
-              src="./images/image04.jpg"
+              src="../images/image04.jpg"
               alt="hoge"
               data-img="4"
             />
@@ -159,7 +159,7 @@ const Modal = () => {
             className={Styles.imgWrapper}
           >
             <StaticImage
-              src="./images/image05.jpg"
+              src="../images/image05.jpg"
               alt="hoge"
               data-img="5"
             />
@@ -170,7 +170,7 @@ const Modal = () => {
             className={Styles.imgWrapper}
           >
             <StaticImage
-              src="./images/image06.jpg"
+              src="../images/image06.jpg"
               alt="hoge"
               data-img="6"
             />
@@ -181,7 +181,7 @@ const Modal = () => {
             className={Styles.imgWrapper}
           >
             <StaticImage
-              src="./images/image07.jpg"
+              src="../images/image07.jpg"
               alt="hoge"
               data-img="7"
             />
@@ -192,7 +192,7 @@ const Modal = () => {
             className={Styles.imgWrapper}
           >
             <StaticImage
-              src="./images/image08.jpg"
+              src="../images/image08.jpg"
               alt="hoge"
               data-img="8"
             />
