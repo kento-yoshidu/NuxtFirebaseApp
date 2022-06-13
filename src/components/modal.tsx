@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql, useStaticQuery } from "gatsby"
+import { StaticImage, GatsbyImage,  } from "gatsby-plugin-image"
 
 import * as Styles from "../styles/style.module.scss"
 import * as ModalStyles from "../styles/modal.module.scss"
@@ -17,8 +18,28 @@ const Modal = () => {
     }
   }
 
+  const { allImageSharp } = useStaticQuery(graphql`
+    query {
+      allImageSharp {
+        edges {
+          node {
+            id
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <>
+      {allImageSharp.edges.map((image) => {
+        console.log(image.node.gatsbyImageData)
+        return (
+          <GatsbyImage image={image.node.gatsbyImageData} alt="joge" />
+        )
+      })}
+
       {show &&
         <div
           className={ModalStyles.overlay}
@@ -114,11 +135,6 @@ const Modal = () => {
             onClick={toggleShow}
             className={Styles.imgWrapper}
           >
-            <StaticImage
-              src="../images/image01.jpg"
-              alt="hoge"
-              data-img="1"
-            />
           </div>
 
           <div
