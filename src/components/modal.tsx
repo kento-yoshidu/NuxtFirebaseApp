@@ -18,8 +18,8 @@ const Modal = () => {
     }
   }
 
-  const { allImageSharp } = useStaticQuery(graphql`
-    query {
+  const { allImageSharp } = useStaticQuery<GatsbyTypes.AllImageSharpQuery>(graphql`
+    query AllImageSharp {
       allImageSharp {
         edges {
           node {
