@@ -20,7 +20,11 @@ const Modal = () => {
 
   const { allImageSharp } = useStaticQuery<GatsbyTypes.AllImageSharpQuery>(graphql`
     query AllImageSharp {
-      allImageSharp {
+      allImageSharp (
+        sort: {
+          fields: fluid___originalName
+        }
+      ) {
         edges {
           node {
             id
@@ -33,13 +37,6 @@ const Modal = () => {
 
   return (
     <>
-      {allImageSharp.edges.map((image) => {
-        console.log(image.node.gatsbyImageData)
-        return (
-          <GatsbyImage image={image.node.gatsbyImageData} alt="joge" />
-        )
-      })}
-
       {show &&
         <div
           className={ModalStyles.overlay}
@@ -51,7 +48,7 @@ const Modal = () => {
           >
             {imgNumber === 1 &&
               <StaticImage
-                src={"../images/image01.jpg"}
+                src={"../images/modal/image01.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -60,7 +57,7 @@ const Modal = () => {
 
             {imgNumber === 2 &&
               <StaticImage
-                src={"../images/image02.jpg"}
+                src={"../images/modal/image02.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -69,7 +66,7 @@ const Modal = () => {
 
             {imgNumber === 3 &&
               <StaticImage
-                src={"../images/image03.jpg"}
+                src={"../images/modal/image03.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -78,7 +75,7 @@ const Modal = () => {
 
             {imgNumber === 4 &&
               <StaticImage
-                src={"../images/image04.jpg"}
+                src={"../images/modal/image04.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -87,7 +84,7 @@ const Modal = () => {
 
             {imgNumber === 5 &&
               <StaticImage
-                src={"../images/image05.jpg"}
+                src={"../images/modal/image05.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -96,7 +93,7 @@ const Modal = () => {
 
             {imgNumber === 6 &&
               <StaticImage
-                src={"../images/image06.jpg"}
+                src={"../images/modal/image06.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -105,7 +102,7 @@ const Modal = () => {
 
             {imgNumber === 7 &&
               <StaticImage
-                src={"../images/image07.jpg"}
+                src={"../images/modal/image07.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -114,7 +111,7 @@ const Modal = () => {
 
             {imgNumber === 8 &&
               <StaticImage
-                src={"../images/image08.jpg"}
+                src={"../images/modal/image08.jpg"}
                 alt="hoge"
                 className={Styles.imgWrapper}
                 layout="fullWidth"
@@ -131,88 +128,22 @@ const Modal = () => {
         </div>
 
         <div className={Styles.photosWrapper}>
-          <div
-            onClick={toggleShow}
-            className={Styles.imgWrapper}
-          >
-          </div>
-
-          <div
-            onClick={toggleShow}
-            className={Styles.imgWrapper}
-          >
-            <StaticImage
-              src="../images/image02.jpg"
-              alt="hoge"
-              data-img="2"
-            />
-          </div>
-
-          <div
-            onClick={toggleShow}
-            className={Styles.imgWrapper}
-          >
-            <StaticImage
-              src="../images/image03.jpg"
-              alt="hoge"
-              data-img="3"
-            />
-          </div>
-
-          <div
-            onClick={toggleShow}
-            className={Styles.imgWrapper}
-          >
-            <StaticImage
-              src="../images/image04.jpg"
-              alt="hoge"
-              data-img="4"
-            />
-          </div>
-
-          <div
-            onClick={toggleShow}
-            className={Styles.imgWrapper}
-          >
-            <StaticImage
-              src="../images/image05.jpg"
-              alt="hoge"
-              data-img="5"
-            />
-          </div>
-
-          <div
-            onClick={toggleShow}
-            className={Styles.imgWrapper}
-          >
-            <StaticImage
-              src="../images/image06.jpg"
-              alt="hoge"
-              data-img="6"
-            />
-          </div>
-
-          <div
-            onClick={toggleShow}
-            className={Styles.imgWrapper}
-          >
-            <StaticImage
-              src="../images/image07.jpg"
-              alt="hoge"
-              data-img="7"
-            />
-          </div>
-
-          <div
-            onClick={toggleShow}
-            className={Styles.imgWrapper}
-          >
-            <StaticImage
-              src="../images/image08.jpg"
-              alt="hoge"
-              data-img="8"
-            />
-          </div>
+          {allImageSharp.edges.map((image, i) => {
+            console.log(i)
+            return (
+              <div
+                onClick={toggleShow}
+                className={Styles.imgWrapper}
+              >
+                <p>{i + 1}</p>
+                <GatsbyImage
+                  image={image.node.gatsbyImageData}
+                  alt="joge"
+                  data-img={i + 1}
+                />
+              </div>
+            )
+          })}
         </div>
       </section>
     </>
