@@ -128,22 +128,19 @@ const Modal = () => {
         </div>
 
         <div className={Styles.photosWrapper}>
-          {allImageSharp.edges.map((image, i) => {
-            console.log(i)
-            return (
-              <div
-                onClick={toggleShow}
-                className={Styles.imgWrapper}
-              >
-                <p>{i + 1}</p>
-                <GatsbyImage
-                  image={image.node.gatsbyImageData}
-                  alt="joge"
-                  data-img={i + 1}
-                />
-              </div>
-            )
-          })}
+          {allImageSharp.edges.map((image, i) => (
+            <div
+              onClick={toggleShow}
+              className={Styles.imgWrapper}
+            >
+              <p>{i + 1}</p>
+              <GatsbyImage
+                image={image.node.gatsbyImageData}
+                alt="joge"
+                data-img={i + 1}
+              />
+            </div>
+          ))}
         </div>
       </section>
     </>
