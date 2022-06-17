@@ -133,7 +133,6 @@ const Modal = () => {
               onClick={toggleShow}
               className={Styles.imgWrapper}
             >
-              <p>{i + 1}</p>
               <GatsbyImage
                 image={image.node.gatsbyImageData}
                 alt="joge"
