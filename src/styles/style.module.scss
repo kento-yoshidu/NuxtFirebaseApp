@@ -11,7 +11,7 @@
 }
 
 .hero-wrapper {
-  display: block;
+  display: block !important;
   width: 80%;
   height: 50vh;
   margin: 50px auto;
@@ -137,7 +137,6 @@
   justify-content: center;
   width: unquote("max(90%, 324px)");
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 .topic {
