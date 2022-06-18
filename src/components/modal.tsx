@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { StaticImage, GatsbyImage,  } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
 import * as Styles from "../styles/style.module.scss"
 import * as ModalStyles from "../styles/modal.module.scss"
@@ -132,6 +132,7 @@ const Modal = () => {
             <div
               onClick={toggleShow}
               className={Styles.imgWrapper}
+              key={i}
             >
               <GatsbyImage
                 image={image.node.gatsbyImageData}
