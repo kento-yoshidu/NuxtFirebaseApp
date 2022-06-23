@@ -3,7 +3,8 @@ import type { GatsbyConfig } from "gatsby"
 const config: GatsbyConfig = {
   siteMetadata: {
     title: "SamplePage1",
-    siteUrl: "https://test.com/"
+    siteUrl: "https://test.com/",
+    description: "学習用に作成したWebサイトです。"
   },
   graphqlTypegen: true,
   plugins: [
