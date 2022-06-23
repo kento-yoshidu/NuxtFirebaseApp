@@ -24,6 +24,7 @@
     "semi": ["warn", "never"],
     "object-curly-spacing": ["warn", "always"],
     "comma-dangle": ["warn", "never"],
-    "max-len": "off"
+    "max-len": "off",
+    "operator-linebreak": "off"
   }
 }

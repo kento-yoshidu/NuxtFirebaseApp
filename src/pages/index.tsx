@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
+import SEO from "../components/Seo"
 import Nav from "../components/Nav"
 import Modal from "../components/modal"
 import Footer from "../components/Footer"
@@ -18,6 +19,8 @@ config.autoAddCss = false
 const IndexPage = () => (
   <div className={Styles.wrapper}>
     <Nav />
+
+    <SEO />
 
     <header>
       <h1 className={`${Styles.title} ${Styles.headerTitle}`}>Sample1</h1>
