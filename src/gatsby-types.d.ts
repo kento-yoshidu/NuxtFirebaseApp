@@ -2923,10 +2923,10 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
-type AllImageSharpQueryVariables = Exact<{ [key: string]: never; }>;
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AllImageSharpQuery = { readonly allImageSharp: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } }> } };
+type SEOQuery = { readonly site: { readonly siteMetadata: { readonly description: string | null, readonly siteUrl: string | null, readonly title: string | null } | null } | null };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
@@ -2954,10 +2954,10 @@ type GatsbyImageSharpFluid_noBase64Fragment = { readonly aspectRatio: number, re
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+type AllImageSharpQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SEOQuery = { readonly site: { readonly siteMetadata: { readonly description: string | null, readonly siteUrl: string | null, readonly title: string | null } | null } | null };
+type AllImageSharpQuery = { readonly allImageSharp: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } }> } };
 
 
 }

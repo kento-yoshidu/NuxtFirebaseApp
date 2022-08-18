@@ -5,7 +5,7 @@ import * as Styles from "../styles/nav.module.scss"
 const Nav = () => (
   <nav className={Styles.globalNav}>
     <div className={Styles.navWrapper}>
-      <h1 className={`${Styles.title} ${Styles.navTitle}`}>Sample1</h1>
+      <h1 className={Styles.navTitle}>Sample1</h1>
       <ul className={Styles.navList}>
         <li className={Styles.navItem}>
           <a href="#">HOME</a>
