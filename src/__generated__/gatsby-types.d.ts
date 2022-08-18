@@ -2919,5 +2919,10 @@ type AllImageSharpQueryVariables = Exact<{ [key: string]: never; }>;
 
 type AllImageSharpQuery = { readonly allImageSharp: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } }> } };
 
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: { readonly siteMetadata: { readonly description: string | null, readonly siteUrl: string | null, readonly title: string | null } | null } | null };
+
 
 }
