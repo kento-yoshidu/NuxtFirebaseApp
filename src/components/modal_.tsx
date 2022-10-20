@@ -1,3 +1,44 @@
+import React from "react"
+
+type Props = {
+  showNumber: number
+  setShowNumber: Function
+  photoCount: number
+}
+
+const Modal = ({ showNumber, setShowNumber, photoCount }: Props) => {
+  const prev = () => {
+    showNumber === 1
+      ? setShowNumber(photoCount)
+      : setShowNumber(showNumber - 1)
+  }
+
+  const next = () => {
+    showNumber === photoCount
+      ? setShowNumber(1)
+      : setShowNumber(showNumber + 1)
+  }
+
+  return (
+    <>
+      {showNumber !== 0 && (
+        <>
+          <h1>Modal</h1>
+
+          <p>id: {showNumber}</p>
+
+          <button onClick={prev}>Prev</button>
+          <button onClick={next}>Next</button>
+          <button onClick={() => setShowNumber(0)}>閉じる</button>
+        </>
+      )}
+    </>
+  )
+}
+
+export default Modal
+
+/*
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
@@ -148,3 +189,4 @@ const Modal = () => {
 }
 
 export default Modal
+*/
