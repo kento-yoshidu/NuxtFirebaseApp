@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 import SEO from "../components/Seo"
 import Nav from "../components/Nav"
@@ -19,7 +21,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   const [modalNumber, setModalNumber] = useState<number>(0)
 
   const ref = useRef<HTMLDialogElement | null>(null)
@@ -124,6 +126,16 @@ const IndexPage = () => {
             </h2>
           </div>
 
+          {data.allImageSharp.edges.map((node) => {
+            return (
+              <GatsbyImage
+                key={node.node.id}
+                image={node.node.gatsbyImageData}
+                alt="hoge"
+              />
+            )
+          })}
+
           <div className={Styles.section}>
             {photoData.map((photo) => (
               <Photo
@@ -152,3 +164,16 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query IndexPage {
+    allImageSharp {
+      edges {
+        node {
+          id
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`

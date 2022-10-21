@@ -2954,5 +2954,10 @@ type GatsbyImageSharpFluid_noBase64Fragment = { readonly aspectRatio: number, re
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexPageQuery = { readonly allImageSharp: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } }> } };
+
 
 }
