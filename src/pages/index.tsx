@@ -23,6 +23,7 @@ config.autoAddCss = false
 
 const IndexPage = ({ data }) => {
   const [modalNumber, setModalNumber] = useState<number>(0)
+  const [modalImage, setModalImage] = useState<any>(null)
 
   const ref = useRef<HTMLDialogElement | null>(null)
 
@@ -126,33 +127,21 @@ const IndexPage = ({ data }) => {
             </h2>
           </div>
 
-          {data.allImageSharp.edges.map((node) => {
-            return (
-              <GatsbyImage
-                key={node.node.id}
-                image={node.node.gatsbyImageData}
-                alt="hoge"
-              />
-            )
-          })}
-
           <div className={Styles.section}>
-            {photoData.map((photo) => (
+            {data.allImageSharp.edges.map((node, i) => (
               <Photo
-                key={photo.id}
-                id={photo.id}
-                title={photo.title}
-                setModalNumber={setModalNumber}
+                key={`key${i}`}
+                setModalImage={setModalImage}
                 showModal={showModal}
+                node={node}
               />
             ))}
           </div>
 
           <Modal
             count={photoData.length}
-            modalNumber={modalNumber}
-            setModalNumber={setModalNumber}
             ref={ref}
+            node={modalImage}
           />
         </section>
 
@@ -170,7 +159,12 @@ export const pageQuery = graphql`
     allImageSharp {
       edges {
         node {
-          id
+          gatsbyImageData
+        }
+        next {
+          gatsbyImageData
+        }
+        previous {
           gatsbyImageData
         }
       }
