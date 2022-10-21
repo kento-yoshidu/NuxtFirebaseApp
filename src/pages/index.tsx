@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import SEO from "../components/Seo"
 import Nav from "../components/Nav"
 import Photo from "../components/Photo"
-import Modal from "../components/modal_"
+import Modal from "../components/Modal"
 import Footer from "../components/Footer"
 
 import { photoData } from "../data/photoData"
@@ -20,7 +20,13 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
 const IndexPage = () => {
-  const [showNumber, setShowNumber] = useState<number>(0)
+  const [modalNumber, setModalNumber] = useState<number>(0)
+
+  const ref = useRef<HTMLDialogElement | null>(null)
+
+  const showModal = () => {
+    ref.current?.showModal()
+  }
 
   return (
     <div className={Styles.wrapper}>
@@ -124,17 +130,18 @@ const IndexPage = () => {
                 key={photo.id}
                 id={photo.id}
                 title={photo.title}
-                setShowNumber={setShowNumber}
+                setModalNumber={setModalNumber}
+                showModal={showModal}
               />
             ))}
           </div>
 
           <Modal
-            showNumber={showNumber}
-            setShowNumber={setShowNumber}
-            photoCount={photoData.length}
+            count={photoData.length}
+            modalNumber={modalNumber}
+            setModalNumber={setModalNumber}
+            ref={ref}
           />
-
         </section>
 
         <Footer />
