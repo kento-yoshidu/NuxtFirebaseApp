@@ -1,15 +1,16 @@
 import React from "react"
 
-
 type Props = {
   id: number,
   title: string
-  setShowNumber: Function
+  setModalNumber: Function
+  showModal: Function
 }
 
-const Photo = ({ id, title, setShowNumber }: Props) => {
+const Photo = ({ id, title, setModalNumber, showModal }: Props, ref: any) => {
   const handleClick = () => {
-    setShowNumber(id)
+    showModal()
+    setModalNumber(id)
   }
 
   return (
@@ -17,7 +18,7 @@ const Photo = ({ id, title, setShowNumber }: Props) => {
       <h1>{id}</h1>
       <p>{title}</p>
 
-      <button onClick={handleClick}>クリックミー</button>
+      <button onClick={() => handleClick()}>クリックミー</button>
     </div>
   )
 }
