@@ -1,5 +1,4 @@
 import React, { forwardRef } from "react"
-import { useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import * as Styles from "../styles/modal.module.scss"
@@ -11,21 +10,7 @@ type Props = {
   node: any
 }
 
-const Modal = ({ count, modalNumber, setModalNumber, node }: Props, ref: any) => {
-  console.log(node)
-
-  const prev = () => {
-    modalNumber === 1
-      ? setModalNumber(count)
-      : setModalNumber(modalNumber - 1)
-  }
-
-  const next = () => {
-    modalNumber === count
-      ? setModalNumber(1)
-      : setModalNumber(modalNumber + 1)
-  }
-
+const Modal = ({ modalNumber, node }: Props, ref: any) => {
   const close = () => {
     ref.current?.close()
   }
@@ -43,8 +28,10 @@ const Modal = ({ count, modalNumber, setModalNumber, node }: Props, ref: any) =>
             alt="hoge"
           />
 
-          <button onClick={prev}>Prev</button>
-          <button onClick={next}>Next</button>
+          {/*
+            <button onClick={prev}>Prev</button>
+            <button onClick={next}>Next</button>
+          */}
           <button onClick={() => close()}>閉じる</button>
         </dialog>
 

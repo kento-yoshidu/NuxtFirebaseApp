@@ -22,7 +22,6 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
 const IndexPage = ({ data }) => {
-  const [modalNumber, setModalNumber] = useState<number>(0)
   const [modalImage, setModalImage] = useState<any>(null)
 
   const ref = useRef<HTMLDialogElement | null>(null)
@@ -123,26 +122,26 @@ const IndexPage = ({ data }) => {
         <section className={Styles.section}>
           <div className={Styles.sectionTitleParent}>
             <h2 className={`${Styles.title} ${Styles.sectionTitle}`}>
-              Artcile
+              Photograph（作成中）
             </h2>
           </div>
+          {/*
 
           <div className={Styles.section}>
             {data.allImageSharp.edges.map((node, i) => (
               <Photo
                 key={`key${i}`}
                 setModalImage={setModalImage}
-                showModal={showModal}
                 node={node}
               />
             ))}
           </div>
 
           <Modal
-            count={photoData.length}
             ref={ref}
             node={modalImage}
           />
+            */}
         </section>
 
         <Footer />
