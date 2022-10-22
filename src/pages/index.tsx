@@ -1,15 +1,13 @@
 import React, { useState, useRef } from "react"
 import { graphql } from "gatsby"
 
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 import SEO from "../components/Seo"
 import Nav from "../components/Nav"
 import Photo from "../components/Photo"
 import Modal from "../components/Modal"
 import Footer from "../components/Footer"
-
-import { photoData } from "../data/photoData"
 
 import * as Styles from "../styles/style.module.scss"
 
@@ -21,7 +19,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data }: { data: GatsbyTypes.IndexPageQuery }) => {
   const [modalImage, setModalImage] = useState<any>(null)
 
   const ref = useRef<HTMLDialogElement | null>(null)
@@ -125,14 +123,14 @@ const IndexPage = ({ data }) => {
               Photograph（作成中）
             </h2>
           </div>
-          {/*
 
-          <div className={Styles.section}>
+          <div className={Styles.photoWrapper}>
             {data.allImageSharp.edges.map((node, i) => (
               <Photo
                 key={`key${i}`}
                 setModalImage={setModalImage}
                 node={node}
+                showModal={() => showModal()}
               />
             ))}
           </div>
@@ -141,7 +139,6 @@ const IndexPage = ({ data }) => {
             ref={ref}
             node={modalImage}
           />
-            */}
         </section>
 
         <Footer />

@@ -23,3 +23,4 @@ export const topicIcon: string;
 export const topicText: string;
 export const topicTitle: string;
 export const wrapper: string;
+export const photosWrapper: string;
