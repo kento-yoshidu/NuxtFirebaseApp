@@ -1,23 +1,25 @@
 import React from "react"
-
+import { GatsbyImage } from "gatsby-plugin-image"
 
 type Props = {
-  id: number,
-  title: string
-  setShowNumber: Function
+  showModal: Function
+  setModalImage: Function
+  node: any
 }
 
-const Photo = ({ id, title, setShowNumber }: Props) => {
+const Photo = ({ showModal, setModalImage, node }: Props, ref: any) => {
   const handleClick = () => {
-    setShowNumber(id)
+    showModal()
+    setModalImage(node)
   }
 
   return (
     <div>
-      <h1>{id}</h1>
-      <p>{title}</p>
-
-      <button onClick={handleClick}>クリックミー</button>
+      <GatsbyImage
+        image={node.node.gatsbyImageData}
+        alt="hoge"
+      />
+      <button onClick={() => handleClick()}>クリックミー</button>
     </div>
   )
 }

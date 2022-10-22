@@ -1,2 +1,1 @@
-export const content: string;
-export const overlay: string;
+export const modal: string;

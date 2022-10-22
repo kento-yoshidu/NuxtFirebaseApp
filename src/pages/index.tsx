@@ -1,10 +1,12 @@
-import React, { useState } from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import React, { useState, useRef } from "react"
+import { graphql } from "gatsby"
+
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 import SEO from "../components/Seo"
 import Nav from "../components/Nav"
 import Photo from "../components/Photo"
-import Modal from "../components/modal_"
+import Modal from "../components/Modal"
 import Footer from "../components/Footer"
 
 import { photoData } from "../data/photoData"
@@ -19,8 +21,14 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-const IndexPage = () => {
-  const [showNumber, setShowNumber] = useState<number>(0)
+const IndexPage = ({ data }) => {
+  const [modalImage, setModalImage] = useState<any>(null)
+
+  const ref = useRef<HTMLDialogElement | null>(null)
+
+  const showModal = () => {
+    ref.current?.showModal()
+  }
 
   return (
     <div className={Styles.wrapper}>
@@ -114,27 +122,26 @@ const IndexPage = () => {
         <section className={Styles.section}>
           <div className={Styles.sectionTitleParent}>
             <h2 className={`${Styles.title} ${Styles.sectionTitle}`}>
-              Artcile
+              Photograph（作成中）
             </h2>
           </div>
+          {/*
 
           <div className={Styles.section}>
-            {photoData.map((photo) => (
+            {data.allImageSharp.edges.map((node, i) => (
               <Photo
-                key={photo.id}
-                id={photo.id}
-                title={photo.title}
-                setShowNumber={setShowNumber}
+                key={`key${i}`}
+                setModalImage={setModalImage}
+                node={node}
               />
             ))}
           </div>
 
           <Modal
-            showNumber={showNumber}
-            setShowNumber={setShowNumber}
-            photoCount={photoData.length}
+            ref={ref}
+            node={modalImage}
           />
-
+            */}
         </section>
 
         <Footer />
@@ -145,3 +152,21 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query IndexPage {
+    allImageSharp {
+      edges {
+        node {
+          gatsbyImageData
+        }
+        next {
+          gatsbyImageData
+        }
+        previous {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`
