@@ -7,7 +7,7 @@ type Props = {
   count: number
   modalNumber: number
   setModalNumber: Function
-  node: any
+  node: GatsbyTypes.IndexPageQuery["allImageSharp"]["edges"]
 }
 
 const Modal = ({ modalNumber, node }: Props, ref: any) => {
@@ -28,11 +28,7 @@ const Modal = ({ modalNumber, node }: Props, ref: any) => {
             alt="hoge"
           />
 
-          {/*
-            <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next</button>
-          */}
-          <button onClick={() => close()}>閉じる</button>
+          <button onClick={() => close()}>CLOSE</button>
         </dialog>
 
       )}

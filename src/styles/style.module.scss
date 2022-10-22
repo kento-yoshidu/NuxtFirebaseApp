@@ -196,18 +196,13 @@
   }
 }
 
-.photos-wrapper {
+.photo-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   width: 90%;
   margin: 60px auto 40px;
-
-  .img-wrapper {
-    width: 23%;
-    cursor: pointer;
-  }
 }
 
 @media (max-width: 768px) {
