@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 import SEO from "../components/Seo"
 import Nav from "../components/Nav"
@@ -19,8 +21,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-const IndexPage = () => {
-  const [modalNumber, setModalNumber] = useState<number>(0)
+const IndexPage = ({ data }) => {
+  const [modalImage, setModalImage] = useState<any>(null)
 
   const ref = useRef<HTMLDialogElement | null>(null)
 
@@ -120,28 +122,26 @@ const IndexPage = () => {
         <section className={Styles.section}>
           <div className={Styles.sectionTitleParent}>
             <h2 className={`${Styles.title} ${Styles.sectionTitle}`}>
-              Artcile
+              Photograph（作成中）
             </h2>
           </div>
+          {/*
 
           <div className={Styles.section}>
-            {photoData.map((photo) => (
+            {data.allImageSharp.edges.map((node, i) => (
               <Photo
-                key={photo.id}
-                id={photo.id}
-                title={photo.title}
-                setModalNumber={setModalNumber}
-                showModal={showModal}
+                key={`key${i}`}
+                setModalImage={setModalImage}
+                node={node}
               />
             ))}
           </div>
 
           <Modal
-            count={photoData.length}
-            modalNumber={modalNumber}
-            setModalNumber={setModalNumber}
             ref={ref}
+            node={modalImage}
           />
+            */}
         </section>
 
         <Footer />
@@ -152,3 +152,21 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query IndexPage {
+    allImageSharp {
+      edges {
+        node {
+          gatsbyImageData
+        }
+        next {
+          gatsbyImageData
+        }
+        previous {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`

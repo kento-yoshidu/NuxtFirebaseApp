@@ -2954,5 +2954,10 @@ type GatsbyImageSharpFluid_noBase64Fragment = { readonly aspectRatio: number, re
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
+type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexPageQuery = { readonly allImageSharp: { readonly edges: ReadonlyArray<{ readonly node: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData }, readonly next: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null, readonly previous: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null }> } };
+
 
 }
