@@ -1,16 +1,14 @@
-import React, { forwardRef } from "react"
+import React, { forwardRef, RefObject } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import * as Styles from "../styles/modal.module.scss"
 
 type Props = {
-  count: number
-  modalNumber: number
-  setModalNumber: Function
+  setModalImage: Function
   node: GatsbyTypes.IndexPageQuery["allImageSharp"]["edges"]
 }
 
-const Modal = ({ modalNumber, node }: Props, ref: any) => {
+const Modal = ({ node }: Props, ref: RefObject<HTMLDialogElement>) => {
   const close = () => {
     ref.current?.close()
   }
@@ -18,19 +16,22 @@ const Modal = ({ modalNumber, node }: Props, ref: any) => {
   return (
     <>
       {node && (
-        <dialog className={Styles.modal} ref={ref}>
-          <h1>Modal</h1>
-
-          <p>id: {modalNumber}</p>
-
+        <dialog
+          className={Styles.modal}
+          ref={ref}
+        >
           <GatsbyImage
+            className={Styles.image}
             image={node.node.gatsbyImageData}
             alt="hoge"
           />
-
-          <button onClick={() => close()}>CLOSE</button>
+          <button
+            className={Styles.button}
+            onClick={() => close()}
+          >
+            CLOSE
+          </button>
         </dialog>
-
       )}
     </>
   )

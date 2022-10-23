@@ -136,6 +136,7 @@ const IndexPage = ({ data }: { data: GatsbyTypes.IndexPageQuery }) => {
           </div>
 
           <Modal
+            setModalImage={setModalImage}
             ref={ref}
             node={modalImage}
           />

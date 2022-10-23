@@ -18,7 +18,7 @@ const Photo = ({ showModal, setModalImage, node }: Props ) => {
   return (
     <div
       className={Styles.imgWrapper}
-      onClick={handleClick}
+      onClick={() => handleClick()}
     >
       <GatsbyImage
         image={node.node.gatsbyImageData}
