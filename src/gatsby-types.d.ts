@@ -2923,15 +2923,15 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: { readonly siteMetadata: { readonly description: string | null, readonly siteUrl: string | null, readonly title: string | null } | null } | null };
-
 type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type IndexPageQuery = { readonly allImageSharp: { readonly edges: ReadonlyArray<{ readonly node: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData }, readonly next: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null, readonly previous: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null }> } };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: { readonly siteMetadata: { readonly description: string | null, readonly siteUrl: string | null, readonly title: string | null } | null } | null };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 

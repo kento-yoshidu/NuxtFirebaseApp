@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import * as Styles from "../styles/Photo.module.scss"
@@ -9,10 +9,10 @@ type Props = {
   node: GatsbyTypes.IndexPageQuery["allImageSharp"]["edges"]
 }
 
-const Photo = ({ showModal, setModalImage, node }: Props ) => {
+const Photo = ({ showModal, setModalImage, node }: Props, ref: any ) => {
   const handleClick = () => {
-    showModal()
     setModalImage(node)
+    console.log(ref)
   }
 
   return (
@@ -28,4 +28,4 @@ const Photo = ({ showModal, setModalImage, node }: Props ) => {
   )
 }
 
-export default Photo
+export default forwardRef(Photo)

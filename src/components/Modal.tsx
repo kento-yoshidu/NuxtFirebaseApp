@@ -8,7 +8,11 @@ type Props = {
   node: GatsbyTypes.IndexPageQuery["allImageSharp"]["edges"]
 }
 
-const Modal = ({ node }: Props, ref: RefObject<HTMLDialogElement>) => {
+const Modal = ({ setModalImage, node }: Props, ref: RefObject<HTMLDialogElement>) => {
+  const prev = () => {
+    setModalImage(node)
+  }
+
   const close = () => {
     ref.current?.close()
   }
@@ -25,6 +29,20 @@ const Modal = ({ node }: Props, ref: RefObject<HTMLDialogElement>) => {
             image={node.node.gatsbyImageData}
             alt="hoge"
           />
+
+          {node.previous && (
+            <button
+              onClick={() => prev()}
+              className={Styles.prev}
+            >
+              Prev
+            </button>
+          )}
+
+          {node.next && (
+            <button>Next</button>
+          )}
+
           <button
             className={Styles.button}
             onClick={() => close()}

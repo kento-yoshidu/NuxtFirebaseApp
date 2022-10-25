@@ -1,15 +1,16 @@
 import React, { useState, useRef } from "react"
 import { graphql } from "gatsby"
 
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 import SEO from "../components/Seo"
 import Nav from "../components/Nav"
 import Photo from "../components/Photo"
-import Modal from "../components/Modal"
+// import Modal from "../components/Modal"
 import Footer from "../components/Footer"
 
 import * as Styles from "../styles/style.module.scss"
+import * as ModalStyles from "../styles/modal.module.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCode, faBook } from "@fortawesome/free-solid-svg-icons"
@@ -25,6 +26,7 @@ const IndexPage = ({ data }: { data: GatsbyTypes.IndexPageQuery }) => {
   const ref = useRef<HTMLDialogElement | null>(null)
 
   const showModal = () => {
+    window.alert("test")
     ref.current?.showModal()
   }
 
@@ -130,16 +132,20 @@ const IndexPage = ({ data }: { data: GatsbyTypes.IndexPageQuery }) => {
                 key={`key${i}`}
                 setModalImage={setModalImage}
                 node={node}
-                showModal={() => showModal()}
+                showModal={showModal}
+                ref={ref}
               />
             ))}
           </div>
 
-          <Modal
-            setModalImage={setModalImage}
-            ref={ref}
-            node={modalImage}
-          />
+          {modalImage && (
+            <dialog ref={ref} className={ModalStyles.modal}>
+              <GatsbyImage
+                image={modalImage.node.gatsbyImageData}
+                alt="test"
+              />
+            </dialog>
+          )}
         </section>
 
         <Footer />
