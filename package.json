@@ -1,52 +1,23 @@
 {
-  "name": "my-gatsby-site",
-  "version": "1.0.0",
+  "name": "samplepage1",
+  "version": "0.1.0",
   "private": true,
-  "description": "my-gatsby-site",
-  "author": "kento",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit",
-    "stylelint": "stylelint src/**/**.{css,scss,sass} --config stylelint.config.js --allow-empty-input"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
-    "gatsby": "^4.16.0",
-    "gatsby-plugin-image": "^2.16.1",
-    "gatsby-plugin-sass": "^5.16.0",
-    "gatsby-plugin-sharp": "^4.16.1",
-    "gatsby-source-filesystem": "^4.16.0",
-    "gatsby-transformer-sharp": "^4.16.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-helmet": "^6.1.0"
+    "next": "13.0.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.40",
-    "@types/react": "^18.0.12",
-    "@types/react-dom": "^18.0.5",
-    "@types/react-helmet": "^6.1.5",
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
-    "eslint": "^8.18.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-react": "^7.30.0",
-    "gatsby-plugin-typegen": "^3.0.0",
-    "postcss-scss": "^4.0.4",
-    "sass": "^1.52.3",
-    "stylelint": "^14.9.1",
-    "stylelint-config-standard": "^26.0.0",
-    "typed-scss-modules": "^6.5.0",
-    "typescript": "^4.7.3"
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
+    "typescript": "4.9.3"
   }
 }

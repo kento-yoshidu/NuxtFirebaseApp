@@ -2914,11 +2914,6 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
-type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type IndexPageQuery = { readonly allImageSharp: { readonly edges: ReadonlyArray<{ readonly node: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData }, readonly next: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null, readonly previous: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null }> } };
-
 type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
