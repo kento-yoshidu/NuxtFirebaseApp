@@ -19,13 +19,13 @@ const Home: NextPage = () => {
   const prevImage = () => {
     showPhotoNumber === 1
       ? setShowPhotoNumber(8)
-      : setShowPhotoNumber(showPhotoNumber - 1) 
+      : setShowPhotoNumber(showPhotoNumber! - 1) 
   }
 
   const nextImage = () => {
     showPhotoNumber === 8
       ? setShowPhotoNumber(1)
-      : setShowPhotoNumber(showPhotoNumber + 1) 
+      : setShowPhotoNumber(showPhotoNumber! + 1) 
   }
 
   return (
