@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react"
 import Image from 'next/image'
 
+import Photo from "./components/Photo"
+
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
@@ -28,6 +30,10 @@ const Home: NextPage = () => {
       : setShowPhotoNumber(showPhotoNumber! + 1) 
   }
 
+  const stopPropagation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation()
+  }
+
   return (
     <>
       <h1>工事中。。。</h1>
@@ -41,60 +47,44 @@ const Home: NextPage = () => {
         "border": "1px solid red"
       }}>
 
-        <div
-          style={{
-            "position": "relative",
-            "width": "30%"
-          }}
-        >
-          <Image
-            onClick={() => openModal(1)}
-            src={`/photo/image01.jpg`}
-            alt="test"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-
-        <div
-          style={{
-            "position": "relative",
-            "width": "30%"
-          }}
-        >
-          <Image
-            onClick={() => openModal(2)}
-            src={`/photo/image02.jpg`}
-            alt="test"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-      </div>
-
-      <dialog ref={ref}>
-        ダイアログ
-
-        <Image
-          src={`/photo/image0${showPhotoNumber}.jpg`}
-          alt="test"
-          height={200}
-          width={300}
+        <Photo
+          showPhotoNumber={1}
+          openModal={openModal}
         />
 
-        {showPhotoNumber}
+        <Photo
+          showPhotoNumber={2}
+          openModal={openModal}
+        />
 
-        <button onClick={prevImage}>
-          Prev
-        </button>
+      </div>
 
-        <button onClick={nextImage}>
-          Next
-        </button>
+      <dialog
+        onClick={closeModal}
+        ref={ref}
+      >
+        <div onClick={stopPropagation}>
+          ダイアログ
 
-        <button onClick={closeModal}>
-          Close
-        </button>
+          <Image
+            src={`/photo/image0${showPhotoNumber}.jpg`}
+            alt="test"
+            height={200}
+            width={300}
+          />
+
+          <button onClick={prevImage}>
+            Prev
+          </button>
+
+          <button onClick={nextImage}>
+            Next
+          </button>
+
+          <button onClick={closeModal}>
+            Close
+          </button>
+        </div>
       </dialog>
     </>
   )
