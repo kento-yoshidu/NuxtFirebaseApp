@@ -1,5 +1,7 @@
 import Image from "next/image"
 
+import * as Styles from "../styles/photo.module.scss"
+
 type Props = {
   showPhotoNumber: number
   openModal: Function
@@ -12,6 +14,7 @@ const Photo = ({ showPhotoNumber ,openModal }: Props) => (
       "width": "30%"
     }}
   >
+    <p className={Styles.test}>hogehoge</p>
     <Image
       onClick={() => openModal(showPhotoNumber)}
       src={`/photo/image0${showPhotoNumber}.jpg`}
