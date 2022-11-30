@@ -3,6 +3,8 @@ import Image from 'next/image'
 
 import Photo from "./components/Photo"
 
+import Styles from "./styles/style.module.scss"
+
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
@@ -40,13 +42,13 @@ const Home: NextPage = () => {
 
       <div style={{
         "display": "flex",
-        "justifyContent": "space-around",
+        "flexWrap": "wrap",
+        "justifyContent": "center",
         "width": "80vw",
-        "height": "500px",
+        "minHeight": "500px",
         "margin": "100px auto",
         "border": "1px solid red"
       }}>
-
         <Photo
           showPhotoNumber={1}
           openModal={openModal}
@@ -57,23 +59,57 @@ const Home: NextPage = () => {
           openModal={openModal}
         />
 
+        <Photo
+          showPhotoNumber={3}
+          openModal={openModal}
+        />
+
+        <Photo
+          showPhotoNumber={4}
+          openModal={openModal}
+        />
+
+        <Photo
+          showPhotoNumber={5}
+          openModal={openModal}
+        />
+
+        <Photo
+          showPhotoNumber={6}
+          openModal={openModal}
+        />
+
+        <Photo
+          showPhotoNumber={7}
+          openModal={openModal}
+        />
+
+        <Photo
+          showPhotoNumber={8}
+          openModal={openModal}
+        />
       </div>
 
       <dialog
         onClick={closeModal}
         ref={ref}
+        className={Styles.dialog}
       >
-        <div onClick={stopPropagation}>
-          ダイアログ
-
+        <div
+          className={Styles.imageWrapper}
+          onClick={stopPropagation}
+        >
           <Image
             src={`/photo/image0${showPhotoNumber}.jpg`}
             alt="test"
-            height={200}
-            width={300}
+            layout="fill"
+            objectFit="contain"
           />
 
-          <button onClick={prevImage}>
+          <button
+            className={Styles.prevButton}
+            onClick={prevImage}
+          >
             Prev
           </button>
 
@@ -81,7 +117,10 @@ const Home: NextPage = () => {
             Next
           </button>
 
-          <button onClick={closeModal}>
+          <button
+            onClick={closeModal}
+            className={Styles.closeButton}
+          >
             Close
           </button>
         </div>
