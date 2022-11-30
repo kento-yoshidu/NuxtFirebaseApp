@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typegen:scss": "typed-scss-modules pages"
   },
   "dependencies": {
     "next": "13.0.5",
@@ -18,6 +19,8 @@
     "@types/react": "18.0.25",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
+    "sass": "^1.56.1",
+    "typed-scss-modules": "^7.0.1",
     "typescript": "4.9.3"
   }
 }
