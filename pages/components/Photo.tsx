@@ -8,13 +8,7 @@ type Props = {
 }
 
 const Photo = ({ showPhotoNumber ,openModal }: Props) => (
-  <div
-    style={{
-      "position": "relative",
-      "width": "30%"
-    }}
-  >
-    <p className={Styles.test}>hogehoge</p>
+  <div className={Styles.wrapper}>
     <Image
       onClick={() => openModal(showPhotoNumber)}
       src={`/photo/image0${showPhotoNumber}.jpg`}
