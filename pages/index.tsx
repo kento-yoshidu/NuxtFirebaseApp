@@ -40,15 +40,9 @@ const Home: NextPage = () => {
     <>
       <h1>工事中。。。</h1>
 
-      <div style={{
-        "display": "flex",
-        "flexWrap": "wrap",
-        "justifyContent": "center",
-        "width": "80vw",
-        "minHeight": "500px",
-        "margin": "100px auto",
-        "border": "1px solid red"
-      }}>
+      <div 
+        className={Styles.photoWrapper}
+      >
         <Photo
           showPhotoNumber={1}
           openModal={openModal}
@@ -95,33 +89,35 @@ const Home: NextPage = () => {
         ref={ref}
         className={Styles.dialog}
       >
-        <div
-          className={Styles.imageWrapper}
-          onClick={stopPropagation}
-        >
-          <Image
-            src={`/photo/image0${showPhotoNumber}.jpg`}
-            alt="test"
-            layout="fill"
-            objectFit="contain"
-          />
+        <div onClick={stopPropagation}>
+          <div className={Styles.imageWrapper}>
+            <Image
+              src={`/photo/image0${showPhotoNumber}.jpg`}
+              alt="test"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
 
           <button
             className={Styles.prevButton}
             onClick={prevImage}
           >
-            Prev
+            &lt;
           </button>
 
-          <button onClick={nextImage}>
-            Next
+          <button
+            className={Styles.nextButton}
+            onClick={nextImage}
+          >
+            &gt; 
           </button>
 
           <button
             onClick={closeModal}
             className={Styles.closeButton}
           >
-            Close
+            ×
           </button>
         </div>
       </dialog>
