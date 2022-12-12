@@ -3,11 +3,27 @@ import Image from 'next/image'
 
 import Photo from "./components/Photo"
 
+import { useSwipeable } from "react-swipeable"
+
 import Styles from "./styles/style.module.scss"
 
 import type { NextPage } from 'next'
 
+
 const Home: NextPage = () => {
+  const handlers = useSwipeable({
+    onSwiped: (event) => {
+      console.log(event);
+      if (event.dir == "Left") {
+        nextImage()
+      }
+      if (event.dir == "Right") {
+        prevImage()
+      }
+    },
+    trackMouse: true
+  })
+
   const [showPhotoNumber, setShowPhotoNumber] = useState<number | null>(null)
   const ref = useRef<HTMLDialogElement | null>(null)
 
@@ -89,36 +105,43 @@ const Home: NextPage = () => {
         ref={ref}
         className={Styles.dialog}
       >
-        <div onClick={stopPropagation}>
-          <div className={Styles.imageWrapper}>
-            <Image
-              src={`/photo/image0${showPhotoNumber}.jpg`}
-              alt="test"
-              layout="fill"
-              objectFit="contain"
-            />
+        <div
+          className={Styles.swipeHandler}
+          {...handlers}
+        >
+          <div
+            onClick={stopPropagation}
+          >
+            <div className={Styles.imageWrapper}>
+              <Image
+                src={`/photo/image0${showPhotoNumber}.jpg`}
+                alt="test"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
+
+            <button
+              className={Styles.prevButton}
+              onClick={prevImage}
+            >
+              &lt;
+            </button>
+
+            <button
+              className={Styles.nextButton}
+              onClick={nextImage}
+            >
+              &gt; 
+            </button>
+
+            <button
+              onClick={closeModal}
+              className={Styles.closeButton}
+            >
+              ×
+            </button>
           </div>
-
-          <button
-            className={Styles.prevButton}
-            onClick={prevImage}
-          >
-            &lt;
-          </button>
-
-          <button
-            className={Styles.nextButton}
-            onClick={nextImage}
-          >
-            &gt; 
-          </button>
-
-          <button
-            onClick={closeModal}
-            className={Styles.closeButton}
-          >
-            ×
-          </button>
         </div>
       </dialog>
     </>
