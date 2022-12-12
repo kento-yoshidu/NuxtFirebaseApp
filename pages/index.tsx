@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react"
 import Image from 'next/image'
+import type { NextPage } from 'next'
 
 import Photo from "./components/Photo"
 
@@ -7,13 +8,9 @@ import { useSwipeable } from "react-swipeable"
 
 import Styles from "./styles/style.module.scss"
 
-import type { NextPage } from 'next'
-
-
 const Home: NextPage = () => {
   const handlers = useSwipeable({
     onSwiped: (event) => {
-      console.log(event);
       if (event.dir == "Left") {
         nextImage()
       }
@@ -59,45 +56,15 @@ const Home: NextPage = () => {
       <div 
         className={Styles.photoWrapper}
       >
-        <Photo
-          showPhotoNumber={1}
-          openModal={openModal}
-        />
-
-        <Photo
-          showPhotoNumber={2}
-          openModal={openModal}
-        />
-
-        <Photo
-          showPhotoNumber={3}
-          openModal={openModal}
-        />
-
-        <Photo
-          showPhotoNumber={4}
-          openModal={openModal}
-        />
-
-        <Photo
-          showPhotoNumber={5}
-          openModal={openModal}
-        />
-
-        <Photo
-          showPhotoNumber={6}
-          openModal={openModal}
-        />
-
-        <Photo
-          showPhotoNumber={7}
-          openModal={openModal}
-        />
-
-        <Photo
-          showPhotoNumber={8}
-          openModal={openModal}
-        />
+        {[...Array(8)].map((_, i) => {
+          return (
+            <Photo
+              key={`photo${i}`}
+              showPhotoNumber={i + 1}
+              openModal={openModal}
+            />
+          )
+        })}
       </div>
 
       <dialog
