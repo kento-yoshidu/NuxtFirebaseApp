@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typegen:scss": "typed-scss-modules pages"
+    "typegen:scss": "typed-scss-modules pages/styles"
   },
   "dependencies": {
     "next": "13.0.5",
