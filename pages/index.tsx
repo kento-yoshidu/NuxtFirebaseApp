@@ -6,7 +6,7 @@ import Photo from "./components/Photo"
 
 import { useSwipeable } from "react-swipeable"
 
-import Styles from "./styles/style.module.scss"
+import Styles from "./styles/style.module.css"
 
 const Home: NextPage = () => {
   const handlers = useSwipeable({

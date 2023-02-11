@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import * as Styles from "../styles/photo.module.scss"
+import * as Styles from "../styles/photo.module.css"
 
 type Props = {
   showPhotoNumber: number
