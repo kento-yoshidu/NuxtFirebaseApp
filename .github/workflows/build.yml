@@ -11,10 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/stepup-node@v3
-      with:
-        node-version: 16.x
+        with:
+          node-version: 16.x
     
     - run: yarn install --frozen-lockfile
     - run: yarn build
-
-j:with
