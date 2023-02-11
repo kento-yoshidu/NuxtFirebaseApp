@@ -15,10 +15,10 @@
   padding: 0;
   max-width: none;
   max-height: none;
+}
 
-  &::backdrop {
-    background-color: rgba(0,0,0, 0.95);
-  }
+.dialog::backdrop {
+  background-color: rgba(0,0,0, 0.95);
 }
 
 .swipeHandler {
@@ -45,10 +45,10 @@
   border-radius: 2px;
   color: #444;
   font-size: 3rem;
+}
 
-  &:hover {
-    background-color: rgba(255, 0, 0, 0.28);
-  }
+:is(.prevButton, .nextButton):hover {
+  background-color: rgba(255, 0, 0, 0.28);
 }
 
 .prevButton {
