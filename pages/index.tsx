@@ -2,7 +2,8 @@ import React, { useState, useRef } from "react"
 import Image from 'next/image'
 import type { NextPage } from 'next'
 
-import Photo from "./components/Photo"
+import Nav from "pages/components/Nav"
+import Photo from "pages/components/Photo"
 
 import { useSwipeable } from "react-swipeable"
 
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <h1>工事中。。。</h1>
+      <Nav />
 
       <div 
         className={Styles.photoWrapper}
