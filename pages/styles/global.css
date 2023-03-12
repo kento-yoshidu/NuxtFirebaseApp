@@ -1,1 +1,16 @@
-@import "./reset.css"
+@import "./reset.css";
+
+:root {
+  /* 色 */
+  --main-color: #dc143c;
+  --gray-75: #444444;
+  --black: #222222;
+}
+
+html {
+  font-family: "Amiri", serif;
+}
+
+body {
+  color: var(--black);
+}
