@@ -3,6 +3,7 @@ import Image from 'next/image'
 import type { NextPage } from 'next'
 
 import Nav from "pages/components/Nav"
+import Header from "pages/components/header"
 import Photo from "pages/components/Photo"
 
 import { useSwipeable } from "react-swipeable"
@@ -37,13 +38,13 @@ const Home: NextPage = () => {
   const prevImage = () => {
     showPhotoNumber === 1
       ? setShowPhotoNumber(8)
-      : setShowPhotoNumber(showPhotoNumber! - 1) 
+      : setShowPhotoNumber(showPhotoNumber! - 1)
   }
 
   const nextImage = () => {
     showPhotoNumber === 8
       ? setShowPhotoNumber(1)
-      : setShowPhotoNumber(showPhotoNumber! + 1) 
+      : setShowPhotoNumber(showPhotoNumber! + 1)
   }
 
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -54,7 +55,9 @@ const Home: NextPage = () => {
     <>
       <Nav />
 
-      <div 
+      <Header />
+
+      <div
         className={Styles.photoWrapper}
       >
         {[...Array(8)].map((_, i) => {
