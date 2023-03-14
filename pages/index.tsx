@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react"
 import Image from 'next/image'
 import type { NextPage } from 'next'
 
-import Nav from "pages/components/__nav"
+import Nav from "pages/components/nav"
 import Header from "pages/components/header"
 import Photo from "pages/components/Photo"
 
