@@ -1,0 +1,31 @@
+.wrapper {
+  position: relative;
+  padding: 50px 10px 90px;
+  width: 25%;
+  border: 1px solid #bbb;
+}
+
+.title {
+  color: #666;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.text {
+  color: #666;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.link {
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  color: var(--main-color);
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  background: #ccc;
+}
