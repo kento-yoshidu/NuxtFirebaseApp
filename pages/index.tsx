@@ -1,10 +1,9 @@
 import React, { useState, useRef } from "react"
-import Image from 'next/image'
 import type { NextPage } from 'next'
 
 import Nav from "pages/components/nav"
 import Header from "pages/components/header"
-import Photo from "pages/components/Photo"
+import Photograph from "./components/photograph"
 
 import { useSwipeable } from "react-swipeable"
 
@@ -57,64 +56,7 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <div
-        className={Styles.photoWrapper}
-      >
-        {[...Array(8)].map((_, i) => {
-          return (
-            <Photo
-              key={`photo${i}`}
-              showPhotoNumber={i + 1}
-              openModal={openModal}
-            />
-          )
-        })}
-      </div>
-
-      <dialog
-        onClick={closeModal}
-        ref={ref}
-        className={Styles.dialog}
-      >
-        <div
-          className={Styles.swipeHandler}
-          {...handlers}
-        >
-          <div
-            onClick={stopPropagation}
-          >
-            <div className={Styles.imageWrapper}>
-              <Image
-                src={`/photo/image0${showPhotoNumber}.jpg`}
-                alt="test"
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-
-            <button
-              className={Styles.prevButton}
-              onClick={prevImage}
-            >
-              &lt;
-            </button>
-
-            <button
-              className={Styles.nextButton}
-              onClick={nextImage}
-            >
-              &gt; 
-            </button>
-
-            <button
-              onClick={closeModal}
-              className={Styles.closeButton}
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      </dialog>
+      <Photograph />
     </>
   )
 }
