@@ -1,8 +1,16 @@
-export const closeButton: string;
-export const dialog: string;
-export const imageWrapper: string;
-export const modalImage: string;
-export const nextButton: string;
-export const photoWrapper: string;
-export const prevButton: string;
-export const swipeHandler: string;
+declare const styles: {
+  readonly "section": string;
+  readonly "sectionTitleParent": string;
+  readonly "sectionTitle": string;
+  readonly "intro": string;
+  readonly "introText": string;
+  readonly "photoWrapper": string;
+  readonly "dialog": string;
+  readonly "swipeHandler": string;
+  readonly "imageWrapper": string;
+  readonly "prevButton": string;
+  readonly "nextButton": string;
+  readonly "closeButton": string;
+};
+export = styles;
+
