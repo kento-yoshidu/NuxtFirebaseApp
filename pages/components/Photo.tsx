@@ -13,8 +13,10 @@ const Photo = ({ showPhotoNumber ,openModal }: Props) => (
       onClick={() => openModal(showPhotoNumber)}
       src={`/photo/image0${showPhotoNumber}.jpg`}
       alt="test"
-      layout="fill"
-      objectFit="contain"
+      fill
+      style={{
+        objectFit: "cover"
+      }}
     />
   </div>
 )

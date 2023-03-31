@@ -8,7 +8,7 @@
 }
 
 .dialog {
-  position: relative;
+  position: fixed;
   background-color: transparent;
   height: 100vh;
   width: 100vw;
