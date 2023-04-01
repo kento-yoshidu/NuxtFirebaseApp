@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React from "react"
 import type { NextPage } from 'next'
 
 import Container from "./components/container"
@@ -34,28 +34,28 @@ const Home: NextPage = () => {
 
         <section className={styles.section}>
           <div className={styles.sectionTitleParent}>
-            <h2 className={styles.sectionTitle}>Artcile</h2>
+            <h2 className={styles.sectionTitle}>Article</h2>
           </div>
 
           <div className={styles.articleWrapper}>
             <Article
               title="初めてのHTML & CSS"
               text="前提知識はほとんどなくてOKです。HTMLとCSSを使用してWebページを作成します。"
-              url="https://blog.toriwatari.work/category/HelloWeb/page/1/"
+              url="https://blog.toriwatari.work/HelloWeb/page/1/"
               icon={faCode}
             />
 
             <Article
               title="Git中級者を目指す"
               text="Gitの入門書を読み終わった人向けの、さらなるステップへ進むためのGit講座です。"
-              url="https://blog.toriwatari.work/category/GitAdvance/page/1/"
+              url="https://blog.toriwatari.work/GitAdvance/page/1/"
               icon={faGitAlt}
             />
 
             <Article
               title="日記"
               text="主にプログラミング以外のことを記事にしています。"
-              url="https://blog.toriwatari.work/category/HelloWeb/page/1/"
+              url="https://blog.toriwatari.work/HelloWeb/page/1/"
               icon={faBook}
             />
           </div>

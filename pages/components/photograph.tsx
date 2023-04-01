@@ -5,7 +5,7 @@ import { useSwipeable } from "react-swipeable"
 
 import Photo from "./Photo"
 
-import Styles from "pages/styles/style.module.css"
+import styles from "pages/styles/photograph.module.css"
 
 const Photograph = () => {
   const handlers = useSwipeable({
@@ -51,7 +51,7 @@ const Photograph = () => {
   return (
     <>
       <div
-        className={Styles.photoWrapper}
+        className={styles.photoWrapper}
       >
         {[...Array(8)].map((_, i) => (
           <Photo
@@ -65,16 +65,16 @@ const Photograph = () => {
       <dialog
         onClick={closeModal}
         ref={ref}
-        className={Styles.dialog}
+        className={styles.dialog}
       >
         <div
-          className={Styles.swipeHandler}
+          className={styles.swipeHandler}
           {...handlers}
         >
           <div
             onClick={stopPropagation}
           >
-            <div className={Styles.imageWrapper}>
+            <div className={styles.imageWrapper}>
               <Image
                 src={`/photo/image0${showPhotoNumber}.jpg`}
                 alt="test"
@@ -84,14 +84,14 @@ const Photograph = () => {
             </div>
 
             <button
-              className={Styles.prevButton}
+              className={styles.prevButton}
               onClick={prevImage}
             >
               &lt;
             </button>
 
             <button
-              className={Styles.nextButton}
+              className={styles.nextButton}
               onClick={nextImage}
             >
               &gt;
@@ -99,9 +99,9 @@ const Photograph = () => {
 
             <button
               onClick={closeModal}
-              className={Styles.closeButton}
+              className={styles.closeButton}
             >
-              ×
+              <span className={styles.bar}></span>
             </button>
           </div>
         </div>

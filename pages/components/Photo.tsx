@@ -7,12 +7,12 @@ type Props = {
   openModal: Function
 }
 
-const Photo = ({ showPhotoNumber ,openModal }: Props) => (
+const Photo = ({ showPhotoNumber = 1 ,openModal }: Props) => (
   <div className={Styles.wrapper}>
     <Image
       onClick={() => openModal(showPhotoNumber)}
       src={`/photo/image0${showPhotoNumber}.jpg`}
-      alt="test"
+      alt=""
       fill
       style={{
         objectFit: "cover"
