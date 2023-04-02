@@ -1,3 +1,66 @@
+.section {
+  margin: 60px auto;
+  padding-top: 70px;
+}
+
+.sectionTitleParent {
+  width: 90%;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.sectionTitle {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: normal;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.sectionTitle::before,
+.sectionTitle::after {
+  content: "◇";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main-color);
+  font-size: 2.5rem;
+}
+
+.sectionTitle::before {
+  left: -40%;
+}
+
+.sectionTitle::after {
+  right: -40%;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  margin: 30px auto 0;
+}
+
+.introText {
+  margin: 10px auto;
+  width: 45%;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-indent: 0.8rem;
+}
+
+@media (width < 768px) {
+  .intro {
+    flex-direction: column;
+  }
+  .introText {
+    width: 95%;
+  }
+}
+
 .photoWrapper {
   display: flex;
   flex-wrap: wrap;
