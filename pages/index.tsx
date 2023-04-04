@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
         <Header />
 
-        <section className={styles.section}>
+        <section className={styles.section} id="about">
           <div className={styles.sectionTitleParent}>
             <h2 className={styles.sectionTitle}>About</h2>
           </div>
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="article">
           <div className={styles.sectionTitleParent}>
             <h2 className={styles.sectionTitle}>Article</h2>
           </div>
@@ -63,7 +63,13 @@ const Home: NextPage = () => {
           <div className="btn-wrapper"><a href="https://blog.toriwatari.work/page/1/" className="btn" target="_blink">read more</a></div>
         </section>
 
-        <Photograph />
+        <section className={styles.section} id="photograph">
+          <div className={styles.sectionTitleParent}>
+            <h2 className={styles.sectionTitle}>Photograph</h2>
+          </div>
+
+          <Photograph />
+        </section>
       </Container>
     </>
   )
