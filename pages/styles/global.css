@@ -3,8 +3,10 @@
 :root {
   /* 色 */
   --main-color: #dc143c;
+  --dark-main-color: rgba(255, 0, 0, 0.3);
   --gray-75: #444444;
   --black: #222222;
+  --nav-height: 70px;
 }
 
 html {

@@ -101,7 +101,6 @@ const Photograph = () => {
               onClick={closeModal}
               className={styles.closeButton}
             >
-              <span className={styles.bar}></span>
             </button>
           </div>
         </div>

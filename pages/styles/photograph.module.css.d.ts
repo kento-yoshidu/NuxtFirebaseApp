@@ -1,4 +1,5 @@
 declare const styles: {
+  readonly "photoWrapper": string;
   readonly "dialog": string;
   readonly "swipeHandler": string;
   readonly "imageWrapper": string;
