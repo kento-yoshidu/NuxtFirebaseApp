@@ -1,0 +1,102 @@
+.photoWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 100px auto;
+  width: 90%;
+  height: 500px;
+}
+
+.dialog {
+  position: fixed;
+  background-color: transparent;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  max-width: none;
+  max-height: none;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0,0,0, 0.95);
+}
+
+.swipeHandler {
+  width: 100%;
+  height: 100%;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 60vh;
+  transform: translate(-50%, -50%);
+}
+
+.prevButton,
+.nextButton {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+  border-radius: 1px;
+  color: #666;
+  font-size: 3rem;
+}
+
+:is(.prevButton, .nextButton):hover {
+  background-color: rgba(255, 0, 0, 0.28);
+}
+
+.prevButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+
+.closeButton {
+  position: fixed;
+  top: 35px;
+  right: 20px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.closeButton::before,
+.closeButton::after {
+  grid-area: 1 / 1;
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1.5px;
+  background-color: #888;
+  transition: 0.15s;
+}
+
+.closeButton::before {
+  transform: rotate(45deg);
+}
+
+.closeButton::after {
+  transform: rotate(-45deg);
+}
+
+.closeButton:hover::before,
+.closeButton:hover::after {
+  background-color: var(--main-color);
+}
