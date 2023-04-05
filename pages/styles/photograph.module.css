@@ -1,10 +1,10 @@
 .photoWrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 100px auto;
-  width: 90%;
-  height: 500px;
+  justify-content: center;
+  gap: 10px;
+  margin: 80px auto;
+  min-height: 500px;
 }
 
 .dialog {
@@ -35,8 +35,16 @@
   transform: translate(-50%, -50%);
 }
 
+@media (width < 768px) {
+  .imageWrapper {
+    width: 90%;
+  }
+}
+
 .prevButton,
 .nextButton {
+  position: absolute;
+  top: 50%;
   width: 70px;
   height: 70px;
   background-color: var(--dark-main-color);
@@ -44,7 +52,7 @@
   border: none;
   border-radius: 1px;
   color: #666;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 :is(.prevButton, .nextButton):hover {
@@ -52,17 +60,21 @@
 }
 
 .prevButton {
-  position: absolute;
-  top: 50%;
   transform: translateY(-50%);
   left: 10px;
 }
 
 .nextButton {
-  position: absolute;
-  top: 50%;
   transform: translateY(-50%);
-  right: 20px;
+  right: 10px;
+}
+
+@media (width < 768px) {
+  .prevButton,
+  .nextButton {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .closeButton {
