@@ -1,5 +1,11 @@
 .wrapper {
   position: relative;
-  width: 24%;
+  width: 23%;
   cursor: pointer;
+}
+
+@media (width < 768px) {
+  .wrapper {
+    width: 44%;
+  }
 }

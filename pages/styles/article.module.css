@@ -5,9 +5,15 @@
   border: 1px solid #bbb;
 }
 
+@media (width < 768px) {
+  .wrapper {
+    width: 75%;
+  }
+}
+
 .title {
   color: #666;
-  font-size: 1.75rem;
+  font-size: clamp(1.2rem, 2.3vw, 1.75rem);
   text-align: center;
 }
 
