@@ -13,8 +13,8 @@
 .wrapper {
   position: relative;
   margin: 0 auto;
-  width: 55%;
-  height: 450px;
+  width: 65%;
+  aspect-ratio: 16 / 9;
 }
 
 @media (width < 768px) {
