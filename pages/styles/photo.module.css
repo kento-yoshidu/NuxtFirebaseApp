@@ -1,6 +1,7 @@
 .wrapper {
   position: relative;
   width: 23%;
+  aspect-ratio: 3 / 2;
   cursor: pointer;
 }
 
