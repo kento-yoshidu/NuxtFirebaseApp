@@ -35,3 +35,10 @@
   padding: 8px 12px;
   background: #ccc;
 }
+
+.icon {
+  display: block;
+  color: #666;
+  font-size: clamp(2rem, 2.9vw, 4.5rem);
+  margin: 10px auto;
+}

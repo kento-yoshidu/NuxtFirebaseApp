@@ -14,7 +14,7 @@ const Article = ({ title, text, url, icon }: Props) => {
     <div className={styles.wrapper}>
       <h2 className={styles.title}>{title}</h2>
 
-      <FontAwesomeIcon icon={icon} />
+      <FontAwesomeIcon icon={icon} className={styles.icon}/>
 
       <p className={styles.text}>{text}</p>
 
