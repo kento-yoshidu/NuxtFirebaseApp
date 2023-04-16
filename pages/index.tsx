@@ -6,6 +6,7 @@ import Nav from "pages/components/nav"
 import Article from "./components/article"
 import Header from "pages/components/header"
 import Photograph from "./components/photograph"
+import Footer from "./components/footer"
 
 import styles from "./styles/style.module.css"
 
@@ -16,9 +17,9 @@ import { faBook } from "@fortawesome/free-solid-svg-icons"
 const Home: NextPage = () => {
   return (
     <>
-      <Container>
-        <Nav />
+      <Nav />
 
+      <Container>
         <Header />
 
         <section className={styles.section} id="about">
@@ -39,28 +40,26 @@ const Home: NextPage = () => {
 
           <div className={styles.articleWrapper}>
             <Article
-              title="初めてのHTML & CSS"
-              text="前提知識はほとんどなくてOKです。HTMLとCSSを使用してWebページを作成します。"
-              url="https://blog.toriwatari.work/HelloWeb/page/1/"
-              icon={faCode}
+              title="Git中級者を目指す"
+              text="Gitの入門書を読み終わった人向けの、さらなるステップへ進むためのGit講座です。"
+              url="https://blog.toriwatari.work/series/GitAdvance/page/1/"
+              icon={faGitAlt}
             />
 
             <Article
-              title="Git中級者を目指す"
-              text="Gitの入門書を読み終わった人向けの、さらなるステップへ進むためのGit講座です。"
-              url="https://blog.toriwatari.work/GitAdvance/page/1/"
-              icon={faGitAlt}
+              title="その他"
+              text="色々なことをまとめています。"
+              url="https://blog.toriwatari.work/series/Others/page/1/"
+              icon={faCode}
             />
 
             <Article
               title="日記"
               text="主にプログラミング以外のことを記事にしています。"
-              url="https://blog.toriwatari.work/HelloWeb/page/1/"
+              url="https://blog.toriwatari.work/series/Diary/page/1/"
               icon={faBook}
             />
           </div>
-
-          <div className="btn-wrapper"><a href="https://blog.toriwatari.work/page/1/" className="btn" target="_blink">read more</a></div>
         </section>
 
         <section className={styles.section} id="photograph">
@@ -70,7 +69,10 @@ const Home: NextPage = () => {
 
           <Photograph />
         </section>
+
       </Container>
+
+      <Footer />
     </>
   )
 }
